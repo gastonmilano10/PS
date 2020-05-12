@@ -10,6 +10,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { MiproviderProvider } from '../providers/miprovider/miprovider';
+import { TabProvider } from '../providers/tab/tab';
+import { Pagina2PageModule } from '../pages/pagina2/pagina2.module';
+import { PaginaActionSheetPage } from '../pages/pagina-action-sheet/pagina-action-sheet';
 
 @NgModule({
   declarations: [
@@ -17,11 +21,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    PaginaActionSheetPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    Pagina2PageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,12 +35,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    PaginaActionSheetPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MiproviderProvider,
+    MiproviderProvider,
+    TabProvider
   ]
 })
 export class AppModule {}
